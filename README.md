@@ -12,9 +12,9 @@ The evolution of the graph of Zachary's Karate Club at different training epochs
 
 ## Requirements
 
-    PyTorch >= 0.4.0
-    tensorboardX <= 1.6.0
-    numpy
+    PyTorch == 1.4.0
+    tensorboard == 1.14.0
+    dgl == 0.4.3.post2  
 
 
 
@@ -24,37 +24,16 @@ The evolution of the graph of Zachary's Karate Club at different training epochs
 
 ```
 optional arguments:
-("--gpu", type=int, default=-1,                                      
- help="which GPU to use. Set -1 to use CPU.")                        
-("--epochs", type=int, default=400,                                  
- help="number of training epochs")                                   
-("--num-heads", type=int, default=4,                                 
- help="number of hidden attention heads")                            
-("--num-out-heads", type=int, default=6,                             
- help="number of output attention heads")                            
-("--num-layers", type=int, default=2,                                
- help="number of hidden layers")                                     
-("--num-hidden", type=int, default=256,                              
- help="number of hidden units")                                      
-("--residual", action="store_true", default=True,                    
- help="use residual connection")                                     
-("--in-drop", type=float, default=0,                                 
- help="input feature dropout")                                       
-("--attn-drop", type=float, default=0,                               
- help="attention dropout")                                           
-("--lr", type=float, default=0.005,                                  
- help="learning rate")                                               
-('--weight-decay', type=float, default=0,                            
- help="weight decay")                                                
-('--alpha', type=float, default=0.2,                                 
- help="the negative slop of leaky relu")                             
-('--batch-size', type=int, default=2,                                
- help="batch size used for training, validation and test")           
-('--patience', type=int, default=10,                                 
- help="used for early stop")                                         
-('--seed', type=int, default=123, help='Random seed.')               
+("--gpu", type=int, default=-1, help="which GPU to use. Set -1 to use CPU.")                        
+("--epochs", type=int, default=400, help="number of training epochs")                                   
+("--num-heads", type=int, default=4, help="number of hidden attention heads")                            
+("--num-out-heads", type=int, default=6, help="number of output attention heads")                            
+("--num-layers", type=int, default=2, help="number of hidden layers")                                     
+("--num-hidden", type=int, default=256, help="number of hidden units")                                                                        
+("--lr", type=float, default=0.01, help="learning rate")                                               
+('--weight-decay', type=float, default=0, help="weight decay")                                                       
 ('--loss_l0', type=float, default=0, help=loss for L0 regularization.')  
-("--l0", type=int, default=0, help="l0")                             
+("--l0", type=int, default=0, help="l0 regularization")                             
 ```
 
 
