@@ -194,8 +194,7 @@ if __name__ == '__main__':
     parser.add_argument('--patience', type=int, default=10,
                         help="used for early stop")
     parser.add_argument('--seed', type=int, default=123, help='Random seed.')
-    parser.add_argument('--reg1', type=float, default=0, help='Alpha for the leaky_relu.')
-    parser.add_argument('--reg2', type=float, default=0, help='Alpha for the leaky_relu.')
+    parser.add_argument('--loss_l0', type=float, default=0, help='loss for L0 regularization.')
     parser.add_argument("--l0", type=int, default=0, help="l0")
     args = parser.parse_args()
     print(args)
