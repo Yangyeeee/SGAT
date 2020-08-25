@@ -104,12 +104,9 @@ optional arguments:
 ##### xAT
 
 ```
-python l0_vat_sup_inductive.py --trainer=l0at --dataset=mnist --arch=MLPSup --data-dir=data --vis --lr=0.001 --lr-decay=0.95 --lr-a=0.000001 --epoch-decay-start=100 --num-epochs=100 --lamb=1  --alpha=1 --k=1 --layer=1 --batch-size=100 --num-batch-it=500 --eps=1 --debug --log-arg=trainer-data_dir-arch-lr-lr_a-eps-lamb-top_bn-layer-debug-seed-fig --seed=1 --gpu-id=4 --alpha=0.5
+python train.py --dataset=cora --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=2 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess cora
+
 ```
-
-
-
-##### xVAT
 
 ```
 python l0_vat_sup_inductive.py --trainer=inl0 --dataset=mnist --arch=MLPSup --data-dir=data --vis --lr=0.001 --lr-decay=0.95 --lr-a=0.000001 --epoch-decay-start=100 --num-epochs=100 --lamb=1  --alpha=1 --k=1 --layer=1 --batch-size=100 --num-batch-it=500 --eps=2 --debug --log-arg=trainer-data_dir-arch-lr-lr_a-eps-lamb-top_bn-layer-debug-seed-fig --seed=1 --gpu-id=4 --alpha=1
