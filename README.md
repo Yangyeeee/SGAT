@@ -1,6 +1,6 @@
 # SGAT
 
-This reposityory contains the PyTorch implementation for [Sparse Graph Attention Networks](https://arxiv.org/abs/1912.00552)
+This reposityory contains the PyTorch implementation for Sparse Graph Attention Networks.
 
 
 
@@ -54,18 +54,3 @@ python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-la
 ```
 python train_ppi.py --l0=1 --num-heads=2 --gpu=0 --num-layers=2 --lr=0.01 --loss_l0=7e-7
 ```
-
-
-## Citation
-
-If you found this code useful, please cite our paper.
-
-```latex
-@article{sgat2020,
-	title={Sparse Graph Attention Networks},
-	author={Yang Ye and Shihao Ji},
-	journal={arXiv preprint arXiv:1912.00552 },
-	year={2019}
-}
-```
-
