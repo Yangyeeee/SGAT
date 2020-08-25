@@ -79,6 +79,7 @@ def main(args):
                 args.in_drop,
                 args.attn_drop,
                 args.alpha,
+                args.bias,
                 args.residual, args.l0)
     print(model)
     # define the optimizer
@@ -102,7 +103,7 @@ def main(args):
                 layer.g = subgraph
             logits = model(feats.float())
             loss = loss_fcn(logits, labels.float())
-            loss_l0 = args.reg1 *(model.gat_layers[0].loss)
+            loss_l0 = args.loss_l0 *(model.gat_layers[0].loss)
             optimizer.zero_grad()
             (loss+loss_l0).backward()
             optimizer.step()
@@ -191,6 +192,8 @@ if __name__ == '__main__':
                         help="the negative slop of leaky relu")
     parser.add_argument('--batch-size', type=int, default=2,
                         help="batch size used for training, validation and test")
+    parser.add_argument('--bias', type=int, default=5,
+                        help="bias for l0 to control many edges will be used at the begining")
     parser.add_argument('--patience', type=int, default=10,
                         help="used for early stop")
     parser.add_argument('--seed', type=int, default=123, help='Random seed.')

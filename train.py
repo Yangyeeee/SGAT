@@ -103,6 +103,7 @@ def main(args):
                 args.idrop,
                 args.adrop,
                 args.alpha,
+                args.bias,
                 args.residual, args.l0)
     print(model)
     if args.early_stop:
@@ -194,6 +195,8 @@ if __name__ == '__main__':
     parser.add_argument('--fastmode', action="store_true", default=False,
                         help="skip re-evaluate the validation set")
     parser.add_argument('--seed', type=int, default=123, help='Random seed.')
+    parser.add_argument('--bias', type=int, default=0,
+                        help="bias for l0 to control many edges will be used at the begining")
     parser.add_argument('--loss_l0', type=float, default=0, help='loss for L0 regularization')
     parser.add_argument("--syn_type", type=str, default='scipy', help="reddit")
     parser.add_argument("--self-loop", action='store_true', help="graph self-loop (default=False)")

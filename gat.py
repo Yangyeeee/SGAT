@@ -48,6 +48,7 @@ class GraphAttention(nn.Module):
                  feat_drop,
                  attn_drop,
                  alpha,
+                 bias_l0,
                  residual=False,l0=0, min=0):
         super(GraphAttention, self).__init__()
         self.g = g
@@ -63,8 +64,7 @@ class GraphAttention(nn.Module):
             self.attn_drop = lambda x : x
         self.attn_l = nn.Parameter(torch.Tensor(size=(1, 1, out_dim)))
         self.attn_r = nn.Parameter(torch.Tensor(size=(1, 1, out_dim)))
-        self.bias = nn.Parameter(torch.FloatTensor([0]))
-        # self.a = nn.Parameter(torch.FloatTensor([5])) # ppi
+        self.bias_l0 = nn.Parameter(torch.FloatTensor([bias_l0]))
 
         nn.init.xavier_normal_(self.fc.weight.data, gain=1.414)
         nn.init.xavier_normal_(self.attn_l.data, gain=1.414)
@@ -131,7 +131,7 @@ class GraphAttention(nn.Module):
             m = self.leaky_relu(edges.src['a1'] + edges.dst['a2'])
         else:
             tmp = edges.src['a1'] + edges.dst['a2']
-            logits = tmp + self.bias
+            logits = tmp + self.bias_l0
 
             if self.training:
                 m = l0_train(logits, 0, 1)
@@ -179,6 +179,7 @@ class GAT(nn.Module):
                  feat_drop,
                  attn_drop,
                  alpha,
+                 bias_l0,
                  residual, l0=0):
         super(GAT, self).__init__()
         self.g = g
@@ -187,17 +188,17 @@ class GAT(nn.Module):
         self.activation = activation
         # input projection (no residual)
         self.gat_layers.append(GraphAttention(
-            g, in_dim, num_hidden, heads[0], feat_drop, attn_drop, alpha, False, l0=l0, min=0))
+            g, in_dim, num_hidden, heads[0], feat_drop, attn_drop, alpha,bias_l0, False, l0=l0, min=0))
         # hidden layers
         for l in range(1, num_layers):
             # due to multi-head, the in_dim = num_hidden * num_heads
             self.gat_layers.append(GraphAttention(
                 g, num_hidden * heads[l-1], num_hidden, heads[l],
-                feat_drop, attn_drop, alpha, residual, l0=l0, min=0))
+                feat_drop, attn_drop, alpha,bias_l0, residual, l0=l0, min=0))
         # output projection
         self.gat_layers.append(GraphAttention(
             g, num_hidden * heads[-2], num_classes, heads[-1],
-            feat_drop, attn_drop, alpha, residual, l0=l0))
+            feat_drop, attn_drop, alpha,bias_l0, residual, l0=l0))
 
 
     def forward(self, inputs):
