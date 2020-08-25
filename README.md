@@ -8,7 +8,7 @@ This reposityory contains the PyTorch implementation for [Sparse Graph Attention
 
 The evolution of the graph of Zachary's Karate Club at different training epochs:
 
-![demo width="60%"](https://github.com/Yangyeeee/SGAT/blob/master/demo/toy.gif)
+![demo width="20%"](https://github.com/Yangyeeee/SGAT/blob/master/demo/toy.gif)
 
 ## Requirements
 
