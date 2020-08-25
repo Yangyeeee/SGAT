@@ -33,7 +33,7 @@ optional arguments:
 ("--lr",             type=float, default=0.01, help="learning rate")                                               
 ('--weight-decay',   type=float, default=0,    help="weight decay")                                                       
 ('--loss_l0',        type=float, default=0,    help=loss for L0 regularization.')  
-("--l0",              type=int,  default=0,    help="l0 regularization")                             
+("--l0",             type=int,  default=0,     help="l0 regularization")                             
 ```
 
 
