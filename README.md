@@ -53,8 +53,7 @@ optional arguments:
 ('--patience', type=int, default=10,                                 
  help="used for early stop")                                         
 ('--seed', type=int, default=123, help='Random seed.')               
-('--reg1', type=float, default=0, help='Alpha for the leaky_relu.')  
-('--reg2', type=float, default=0, help='Alpha for the leaky_relu.')  
+('--loss_l0', type=float, default=0, help=loss for L0 regularization.')  
 ("--l0", type=int, default=0, help="l0")                             
 ```
 
@@ -74,7 +73,7 @@ python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-la
 ```
 ## PPI
 ```
-python train_ppi.py --l0=1 --num-heads=2 --gpu=0 --num-layers=2 --lr=0.01 --reg1=7e-7
+python train_ppi.py --l0=1 --num-heads=2 --gpu=0 --num-layers=2 --lr=0.01 --loss_l0=7e-7
 ```
 
 
