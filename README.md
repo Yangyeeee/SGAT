@@ -24,16 +24,16 @@ The evolution of the graph of Zachary's Karate Club at different training epochs
 
 ```
 optional arguments:
-("--gpu", type=int, default=-1, help="which GPU to use. Set -1 to use CPU.")                        
-("--epochs", type=int, default=400, help="number of training epochs")                                   
-("--num-heads", type=int, default=4, help="number of hidden attention heads")                            
-("--num-out-heads", type=int, default=6, help="number of output attention heads")                            
-("--num-layers", type=int, default=2, help="number of hidden layers")                                     
-("--num-hidden", type=int, default=256, help="number of hidden units")                                                                        
-("--lr", type=float, default=0.01, help="learning rate")                                               
-('--weight-decay', type=float, default=0, help="weight decay")                                                       
-('--loss_l0', type=float, default=0, help=loss for L0 regularization.')  
-("--l0", type=int, default=0, help="l0 regularization")                             
+("--gpu",            type=int,   default=-1,   help="which GPU to use. Set -1 to use CPU.")                        
+("--epochs",         type=int,   default=400,  help="number of training epochs")                                   
+("--num-heads",      type=int,   default=4,    help="number of hidden attention heads")                            
+("--num-out-heads",  type=int,   default=6,    help="number of output attention heads")                            
+("--num-layers",     type=int,   default=2,    help="number of hidden layers")                                     
+("--num-hidden",     type=int,   default=256,  help="number of hidden units")                                                                        
+("--lr",             type=float, default=0.01, help="learning rate")                                               
+('--weight-decay',   type=float, default=0,    help="weight decay")                                                       
+('--loss_l0',        type=float, default=0,    help=loss for L0 regularization.')  
+("--l0",              type=int,  default=0,    help="l0 regularization")                             
 ```
 
 
