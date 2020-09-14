@@ -10,7 +10,7 @@ from torch.utils.tensorboard import SummaryWriter
 import random
 from torch.backends import cudnn
 #from reddit import RedditDataset
-from ms import MsDataset
+# from ms import MsDataset
 import networkx as nx
 import numpy as np
 from utils import EarlyStopping
