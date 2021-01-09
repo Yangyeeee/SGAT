@@ -44,7 +44,8 @@ python train.py --dataset=cora --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-laye
 ```
 ## Citeseer
 ```
-python train.py --dataset=citeseer --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess citeseer
+python train.py --dataset=citeseer --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess citeseer --idrop 0.4 --adrop 0.5
+
 ```
 ## Pubmed
 ```
