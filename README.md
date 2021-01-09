@@ -49,7 +49,7 @@ python train.py --dataset=citeseer --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-
 ```
 ## Pubmed
 ```
-python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess pubmed
+python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess pubmed --idrop 0.1 --adrop 0.5 --num-out-heads=2 --weight-decay=0.001
 ```
 ## PPI
 ```
