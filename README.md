@@ -39,7 +39,7 @@ optional arguments:
 
 ## Cora
 ```
-python train.py --dataset=cora --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=64 --loss_l0 1e-6 --sess cora --idrop 0.4 --adrop 0.5
+python train.py --dataset=cora --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=64 --loss_l0 1e-6 --sess cora --idrop 0.4 --adrop 0.3
 
 ```
 ## Citeseer
