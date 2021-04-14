@@ -1,20 +1,14 @@
 # SGAT
-
 This reposityory contains the PyTorch implementation of "Sparse Graph Attention Networks", IEEE TKDE 2021.
 
-
 ## Demo
-
 The evolution of the graph of Zachary's Karate Club at different training epochs:
-
 <img src="https://github.com/Yangyeeee/SGAT/blob/master/demo/toy.gif" width="60%"/>
-
 ## Requirements
 
     PyTorch == 1.4.0
     tensorboard == 1.14.0
     dgl == 0.4.3.post2  
-
 
 
 ## Usage
@@ -52,6 +46,7 @@ python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-la
 ```
 python train_ppi.py --l0=1 --num-heads=2 --num-hidden 512 --gpu=0 --num-layers=2 --lr=0.01 --loss_l0=7e-7
 ```
+
 
 ## Citation
 If you found this code useful, please cite our paper.
