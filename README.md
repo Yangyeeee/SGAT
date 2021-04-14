@@ -1,7 +1,6 @@
 # SGAT
 
-This reposityory contains the PyTorch implementation for Sparse Graph Attention Networks.
-
+This reposityory contains the PyTorch implementation of "Sparse Graph Attention Networks", IEEE TKDE 2021.
 
 
 ## Demo
@@ -18,10 +17,8 @@ The evolution of the graph of Zachary's Karate Club at different training epochs
 
 
 
-# Usage
-
-## Basic Parameters
-
+## Usage
+### Basic Parameters
 ```
 optional arguments:
 ("--gpu",            type=int,   default=-1,   help="which GPU to use. Set -1 to use CPU.")                        
@@ -36,22 +33,22 @@ optional arguments:
 ("--l0",             type=int,  default=0,     help="l0 regularization")                             
 ```
 
-
-## Cora
+### Cora
 ```
 python train.py --dataset=cora --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=64 --loss_l0 1e-6 --sess cora --idrop 0.4 --adrop 0.3
-
 ```
-## Citeseer
+
+### Citeseer
 ```
 python train.py --dataset=citeseer --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess citeseer --idrop 0.4 --adrop 0.5
-
 ```
-## Pubmed
+
+### Pubmed
 ```
 python train.py --dataset=pubmed --l0=1 --lr=0.01 --num-heads=2 --gpu=4 --num-layers=1 --epochs=200 --num-hidden=32 --loss_l0 1e-6 --sess pubmed --idrop 0.1 --adrop 0.5 --num-out-heads=2 --weight-decay=0.001
 ```
-## PPI
+
+### PPI
 ```
 python train_ppi.py --l0=1 --num-heads=2 --num-hidden 512 --gpu=0 --num-layers=2 --lr=0.01 --loss_l0=7e-7
 ```
